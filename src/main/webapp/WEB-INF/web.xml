@@ -1,0 +1,30 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+ <display-name>Mamdouh WS Service for RM</display-name>
+  <servlet>
+  	<servlet-name>TestServ1</servlet-name>
+  	<display-name>TestServ1</display-name>
+  	<description></description>
+  	<servlet-class>ua.at.mamdouh.servlets.TestServ1</servlet-class>
+  </servlet>
+  
+  	<servlet>
+		<servlet-name>Jersey Web Application</servlet-name>
+		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	  <servlet-mapping>
+  	<servlet-name>TestServ1</servlet-name>
+  	<url-pattern>/TestServ1</url-pattern>
+  </servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>Jersey Web Application</servlet-name>
+		<url-pattern>/api/*</url-pattern>
+	</servlet-mapping>
+	
+</web-app>
