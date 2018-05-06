@@ -22,7 +22,7 @@ public class RMRESTServiceClient {
  
 			// Step1: Let's 1st read file from fileSystem
 			// Change CrunchifyJSON.txt path here
-			InputStream crunchifyInputStream = new FileInputStream("D:\\test.txt");
+			InputStream crunchifyInputStream = new FileInputStream("D:\\test2.txt");
 			InputStreamReader crunchifyReader = new InputStreamReader(crunchifyInputStream);
 			BufferedReader br = new BufferedReader(crunchifyReader);
 			String line;
@@ -31,11 +31,11 @@ public class RMRESTServiceClient {
 			}
  
 			JSONObject jsonObject = new JSONObject(string);
-			System.out.println(jsonObject);
+		//	System.out.println(jsonObject);
  
 			// Step2: Now pass JSON File Data to REST Service
 			try {
-				URL url = new URL("http://localhost:8080/RM_WS/api/RMservice");
+				URL url = new URL("http://localhost:8080/rm_web_serv/api/RMservice");
 				URLConnection connection = url.openConnection();
 				connection.setDoOutput(true);
 				connection.setRequestProperty("Content-Type", "application/json");
@@ -47,8 +47,8 @@ public class RMRESTServiceClient {
  
 				BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
  
-				while (in.readLine() != null) {
-				}
+				while (br.readLine() != null) {}
+				
 				System.out.println("\nRM REST Service Invoked Successfully..");
 				in.close();
 			} catch (Exception e) {
