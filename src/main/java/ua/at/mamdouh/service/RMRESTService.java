@@ -134,7 +134,11 @@ public class RMRESTService {
 			res = true;
 		}
 
-		return Response.status(200).entity("check from : " + from + " , status:" + res).build();
+	//	return Response.status(200).entity("check from : " + from + " , status:" + res).build();
+		
+		String str = Boolean.toString(res);
+		
+		return Response.status(200).entity(str).build();
 
 	}
 
@@ -159,6 +163,8 @@ public class RMRESTService {
 		}
 
 		return Response.status(200).entity("sent from : " + from).build();
+		
+///		return Response.status(200).entity(from).build();
 
 	}
 	
@@ -181,7 +187,11 @@ public class RMRESTService {
 			count = Hit.getInstance().getCountM();
 		}
 
-		return Response.status(200).entity("count to : " + to + " , is:" + count).build();
+//		return Response.status(200).entity("count to : " + to + " , is:" + count).build();
+		
+		String str = Integer.toString(count);
+		
+		return Response.status(200).entity(str).build();
 
 	}
 	

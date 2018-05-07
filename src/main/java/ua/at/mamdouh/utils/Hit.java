@@ -75,13 +75,11 @@ public class Hit {
 				while(true) {
 					
 					try {
-						Thread.sleep(10000);
+						Thread.sleep(20000);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
-					
-					synchronized (hit) {
-						
+										
 						if(R==true) {
 							
 							R = false;
@@ -90,9 +88,7 @@ public class Hit {
 						if(M==true) {
 							
 							M = false;
-						}
-					}
-				
+						}	
 				}
 				
 			}}).start();
