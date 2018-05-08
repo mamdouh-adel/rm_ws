@@ -133,12 +133,28 @@ public class RMRESTService {
 
 			res = true;
 		}
+		
+		//---------------  count ----------------------------------------
+		
+		int count = 0;
 
-	//	return Response.status(200).entity("check from : " + from + " , status:" + res).build();
+		if (from.equals("M")) {
+
+			count = Hit.getInstance().getCountR();
+		}
+
+		if (from.equals("R")) {
+
+			count = Hit.getInstance().getCountM();
+		}
 		
-		String str = Boolean.toString(res);
+		String strBool = Boolean.toString(res);
 		
-		return Response.status(200).entity(str).build();
+		String strCount = Integer.toString(count);
+		
+		return Response.status(200).entity(strBool + ":" + strCount).build();
+		
+//		return Response.status(200).entity("check from : " + from + " , status:" + res).build();
 
 	}
 
